@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
 
@@ -10,9 +11,10 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20221130182645_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.8");
@@ -102,25 +104,6 @@ namespace Persistence.Migrations
                     b.ToTable("HotelServices");
                 });
 
-            modelBuilder.Entity("Domain.Room", b =>
-                {
-                    b.Property<string>("ID")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RoomID")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RoomNo")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RoomType")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Rooms");
-                });
-
             modelBuilder.Entity("Domain.RoomBookingStatus", b =>
                 {
                     b.Property<string>("ID")
@@ -138,6 +121,25 @@ namespace Persistence.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("RoomBookingStatuses");
+                });
+
+            modelBuilder.Entity("Domain.TotalRooms", b =>
+                {
+                    b.Property<string>("ID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RoomID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RoomNo")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RoomType")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("TotalRooms");
                 });
 
             modelBuilder.Entity("Domain.TransactionTableforUserAction", b =>
@@ -168,7 +170,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("TransactionTableforUserActions");
+                    b.ToTable("TransactionTableforUserAction");
                 });
 #pragma warning restore 612, 618
         }
