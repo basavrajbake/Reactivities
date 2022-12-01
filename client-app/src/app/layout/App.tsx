@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 import HomePage from '../../features/home/HomePage';
 import ActivityForm from '../../features/activities/form/ActivityForm';
-
+import Checkout from '../../features/Checkout/Checkout';
+import Services from '../../features/Services/Services';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
   {
     path:'/createActivity',
     element: <ActivityForm />,
+  },
+  {
+    path:'/Service',
+    element: <Services />,
+  },
+  {
+    path:'/checkout',
+    element: <Checkout />,
   }
 ]);
 function App() {

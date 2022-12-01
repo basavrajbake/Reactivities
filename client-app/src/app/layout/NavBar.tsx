@@ -8,11 +8,11 @@ export default function NavBar(){
         <Menu inverted fixed="top">
             <Container>
                 <Menu.Item header>
-                    <img src="/assets/logo.png" alt="logo" style={{marginRight: '10px'}} />
+                    <img src="/assets/hotelLogo.jpeg" alt="logo" style={{marginRight: '10px'}} />
                 </Menu.Item>
-                <Menu.Item name="Activities" />
+                <Menu.Item name="Home" />
                 <Menu.Item>
-                    <Button onClick={() => activityStore.openForm()} positive content='Create Activity' />
+                    <Button onClick={() => activityStore.openForm()} positive content='New Guest' />
                 </Menu.Item>
             </Container>
         </Menu>
